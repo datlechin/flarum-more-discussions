@@ -51,6 +51,8 @@ export default class MoreDiscussions<CustomAttrs> extends Component {
   }
 
   load() {
+    console.log(app.current);
+    console.log(app.current.data);
     app.store
       .find('discussions', {
         page: {
