@@ -51,8 +51,6 @@ export default class MoreDiscussions<CustomAttrs> extends Component {
   }
 
   load() {
-    console.log(app.current);
-    console.log(app.current.data);
     app.store
       .find('discussions', {
         page: {
@@ -60,7 +58,7 @@ export default class MoreDiscussions<CustomAttrs> extends Component {
         },
         sort: this.filterBy,
         filter: {
-          q: this.isRelated ? app.current.data.discussion.title : null,
+          q: this.isRelated ? app.current.data.discussion.title() : null,
         },
       })
       .then((results) => {
