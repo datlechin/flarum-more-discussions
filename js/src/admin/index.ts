@@ -33,6 +33,12 @@ app.initializers.add('datlechin/flarum-more-discussions', () => {
         '-votes': trans('filter_dropdown.votes'),
       },
       default: '',
+    })
+    .registerSetting({
+      setting: settingPrefix + 'is_related',
+      label: trans('discussion_related_label'),
+      help: trans('discussion_related_help'),
+      type: 'boolean',
     });
 });
 

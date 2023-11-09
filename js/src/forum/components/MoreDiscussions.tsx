@@ -12,6 +12,7 @@ export default class MoreDiscussions<CustomAttrs> extends Component {
   limit: number = 0;
   blockName: ValueOrArray<string> = '';
   filterBy: string = '';
+  isRelated: boolean = false;
 
   oninit(vnode: Mithril.Vnode<CustomAttrs, this>) {
     super.oninit(vnode);
@@ -22,6 +23,7 @@ export default class MoreDiscussions<CustomAttrs> extends Component {
     this.filterBy = app.forum.attribute('datlechin-more-discussions.filterBy');
     this.blockName =
       app.forum.attribute('datlechin-more-discussions.blockName') || app.translator.trans('datlechin-more-discussions.forum.block_default_name');
+    this.isRelated = app.forum.attribute('datlechin-more-discussions.isRelated');
 
     this.load();
   }
@@ -55,6 +57,9 @@ export default class MoreDiscussions<CustomAttrs> extends Component {
           limit: this.limit,
         },
         sort: this.filterBy,
+        filter: {
+          q: this.isRelated ? this.attrs.discussion.title : null
+        },
       })
       .then((results) => {
         this.discussions = results;
