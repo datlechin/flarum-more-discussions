@@ -12,6 +12,6 @@ app.initializers.add('datlechin/flarum-more-discussions', () => {
 
     const moreDiscussionRoot = document.createElement('div');
     moreDiscussionRoot.classList.add('MoreDiscussions');
-    m.mount(insertAfter(moreDiscussionRoot, postStream), MoreDiscussions<ComponentAttrs>);
+    m.mount(insertAfter(moreDiscussionRoot, postStream), MoreDiscussions);
   });
 });
