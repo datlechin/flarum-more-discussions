@@ -58,7 +58,7 @@ export default class MoreDiscussions<CustomAttrs> extends Component {
         },
         sort: this.filterBy,
         filter: {
-          q: this.isRelated ? this.attrs.discussion.title : null
+          q: this.isRelated ? this.attrs.discussion.title : null,
         },
       })
       .then((results) => {
