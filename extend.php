@@ -26,6 +26,7 @@ return [
     (new Extend\Settings())
         ->serializeToForum('datlechin-more-discussions.blockName', 'datlechin-more-discussions.block_name', 'strval')
         ->serializeToForum('datlechin-more-discussions.discussionLimit', 'datlechin-more-discussions.discussion_limit', 'intval')
-        ->serializeToForum('datlechin-more-discussions.filterBy', 'datlechin-more-discussions.filter_by', 'strval'),
+        ->serializeToForum('datlechin-more-discussions.filterBy', 'datlechin-more-discussions.filter_by', 'strval')
+        ->serializeToForum('datlechin-more-discussions.isRelated', 'datlechin-more-discussions.is_related', 'boolval', false),
 
 ];
