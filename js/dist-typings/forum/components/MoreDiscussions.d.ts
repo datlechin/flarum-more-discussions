@@ -8,6 +8,7 @@ export default class MoreDiscussions<CustomAttrs> extends Component {
     limit: number;
     blockName: ValueOrArray<string>;
     filterBy: string;
+    isRelated: boolean;
     oninit(vnode: Mithril.Vnode<CustomAttrs, this>): void;
     view(vnode: Mithril.Vnode<CustomAttrs, this>): JSX.Element;
     load(): void;
