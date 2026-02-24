@@ -9,7 +9,7 @@ export default class MoreDiscussions<CustomAttrs> extends Component {
   loading: boolean = false;
   discussions: Array<Model> = [];
   limit: number = 0;
-  blockName: string | any[] = '';
+  blockName: string = '';
   filterBy: string = '';
   isRelated: boolean = false;
 
@@ -21,7 +21,7 @@ export default class MoreDiscussions<CustomAttrs> extends Component {
     this.limit = app.forum.attribute('datlechin-more-discussions.discussionLimit') || 5;
     this.filterBy = app.forum.attribute('datlechin-more-discussions.filterBy');
     this.blockName =
-      app.forum.attribute('datlechin-more-discussions.blockName') || app.translator.trans('datlechin-more-discussions.forum.block_default_name');
+      app.forum.attribute('datlechin-more-discussions.blockName') || String(app.translator.trans('datlechin-more-discussions.forum.block_default_name'));
     this.isRelated = app.forum.attribute('datlechin-more-discussions.isRelated');
 
     this.load();
