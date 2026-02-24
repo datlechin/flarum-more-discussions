@@ -3,14 +3,13 @@ import Component, { ComponentAttrs } from 'flarum/common/Component';
 import DiscussionListItem from 'flarum/forum/components/DiscussionListItem';
 import LoadingIndicator from 'flarum/common/components/LoadingIndicator';
 import type Mithril from 'mithril';
-import { ValueOrArray } from '@askvortsov/rich-icu-message-formatter';
 import Model from 'flarum/common/Model';
 
 export default class MoreDiscussions<CustomAttrs> extends Component {
   loading: boolean = false;
   discussions: Array<Model> = [];
   limit: number = 0;
-  blockName: ValueOrArray<string> = '';
+  blockName: string | any[] = '';
   filterBy: string = '';
   isRelated: boolean = false;
 
